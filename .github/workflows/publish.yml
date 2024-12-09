@@ -29,4 +29,4 @@ jobs:
     - name: Build
       run: python -m build .
 
-    - run: twine upload dist/*
+    - run: twine upload --repository testpypi dist/*

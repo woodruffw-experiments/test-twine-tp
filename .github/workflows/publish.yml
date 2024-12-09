@@ -24,7 +24,7 @@ jobs:
     - name: Install build dependencies
       run: python -m pip install -U setuptools wheel build
 
-    - run: python -m pip install https://github.com/takluyver/twine/archive/oidc.zip
+    - run: python -m pip install git+https://github.com/takluyver/twine@oidc#egg=twine
 
     - name: Build
       run: python -m build .

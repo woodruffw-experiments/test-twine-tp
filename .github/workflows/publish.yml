@@ -23,9 +23,10 @@ jobs:
         python-version: '3.x'
     - name: Install build dependencies
       run: python -m pip install -U setuptools wheel build
+
+    - run: python -m pip install https://github.com/takluyver/twine/archive/oidc.zip
+
     - name: Build
       run: python -m build .
-    - name: Publish
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        skip-existing: true
+
+    - run: twine upload dist/*

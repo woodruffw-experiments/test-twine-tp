@@ -4,9 +4,7 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build-and-publish:
@@ -24,7 +22,7 @@ jobs:
     - name: Install build dependencies
       run: python -m pip install -U setuptools wheel build
 
-    - run: python -m pip install git+https://github.com/takluyver/twine@oidc#egg=twine
+    - run: python -m pip install git+https://github.com/pypa/twine@ww/rm-md5#egg=twine
 
     - name: Build
       run: python -m build .
